@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layui Null 快速上手</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        .margin-10px {
+            margin: 10px;
+        }
+    
+        .padding-16px {
+            padding: 16px;
+        }
+    
+        .text-align-center {
+            text-align: center;
+        }
+    
+        .layui-icon {
+            font-size: inherit;
+        }
+    
+        .text-indent-2em {
+            text-indent: 2em;
+        }
+    
+        code {
+            padding: 2px;
+            font-weight: bold;
+            background-color: rgba(255, 165, 0, 0.25);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="layui-bg-gray">
+    <div class="layui-container">
+        <div class="layui-text padding-16px">
+            <h1>下载获取</h1>
+            您可以通过一下两种途径的任意一种获取 Layui Null
+            <ul>
+                <li>进入 <a href="https://github.com/xkk1/layuinull/releases" target="_blank">GitHub Release</a>，下载最新版 Zip 压缩包并解压</li>
+                <li>安装 <a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank">Git</a>，终端执行：
+                    <pre class="layui-code layuinull-code" lay-options="{}">
+                        git clone https://github.com/xkk1/layuinull.git
+                    </pre>
+                </li>
+            </ul>
+            <h1>极速体验</h1>
+            <p>在 Layui Null 目录下启用 http 服务器或在浏览器直接打开 <code>index.html</code>。</p>
+            <h1>快速使用</h1>
+            <ol>
+                <li>复制 <code>index.html</code>、<code>index.css</code>、<code>index.js</code> 到您项目的合适位置（若您的项目未使用 <a href="https://layui.dev/" target="_blank">Layui</a>，您也需要复制 layui 文件夹）</li>
+                <li>确保 <code>index.html</code> 中的 Layui、<code>index.css</code>、<code>index.js</code> 引入路径正确</li>
+                <li>根据需求更改 <code>index.html</code> 代码</li>
+            </ol>
+        </div>
+    </div>
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use(function () {
+            // code 不显示行号
+            layui.code({
+                elem: '.layuinull-code',
+                ln: false
+            });
+            // code 显示行号
+            layui.code({
+                elem: '.layuinull-code-ln',
+                ln: true
+            });
+        })
+    </script>
+</body>
+</html>

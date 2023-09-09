@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layui Null 使用文档</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        .margin-10px {
+            margin: 10px;
+        }
+    
+        .padding-16px {
+            padding: 16px;
+        }
+    
+        .text-align-center {
+            text-align: center;
+        }
+    
+        .layui-icon {
+            font-size: inherit;
+        }
+    
+        .text-indent-2em {
+            text-indent: 2em;
+        }
+    
+        code {
+            padding: 2px;
+            font-weight: bold;
+            background-color: rgba(255, 165, 0, 0.25);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="layui-bg-gray">
+    <div class="layui-container">
+        <div class="layui-text padding-16px">
+            <h1>Layui Null 使用文档</h1>
+            <p>Layui Null 是一个基于 <a href="https://layui.dev/" target="_blank">Layui</a> 使用 flex 布局的后台框架，因此，在使用 Layui Null 之前，请确保已经引入了 <a href="https://layui.dev/" target="_blank">Layui</a>。</p>
+            <h2>项目结构</h2>
+            <p>Layui Null 项目结构如下：</p>
+            <pre class="layui-code layuinull-code" lay-options="{}">
+layuinull/
+    ├── index.html
+    ├── index.css
+    ├── index.js
+    └── layui依赖
+            </pre>
+            <h2>使用方法</h2>
+            <ol>
+                <li>将 <code>index.html</code>、<code>index.css</code>、<code>index.js</code> 更改为合适的文件名后复制到您项目的合适位置</li>
+                <li>编辑 <code>index.html</code> 文件，将 <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;layui/css/layui.css&quot;&gt;</code>、<code>&lt;script src=&quot;layui/layui.js&quot;&gt;&lt;/script&gt;</code> 替换成您项目的 <code>layui</code> 目录</li>
+                <li>编辑 <code>index.html</code> 文件，将 <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;</code>、<code>&lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;</code> 改为您复制到项目的 <code>index.css</code>、<code>index.js</code></li>
+            </ol>
+            
+            <h2>侧边栏</h2>
+            <p>
+                侧边栏由“<strong>logo</strong> + <strong>导航菜单</strong>”组成。宽度可在 <code>index.css</code> 的
+                <pre class="layui-code layuinull-code-ln" lay-options="{}">
+.layuinull-left-nav {
+    /* 左侧导航栏宽度 */
+    width: 300px;
+}
+                </pre>
+                中修改。
+            </p>
+            <h3>logo</h3>
+            <p>logo 应放在
+                <pre class="layui-code layuinull-code-ln" lay-options="{}">
+<div class="layuinull-logo layui-bg-black layui-font-32" id="layuinull-logo">
+    Layui Null
+</div>
+                </pre>
+                内。此处使用 flex 布局，<code>div</code> 可自适应高度。
+
+            </p>
+            <h3>导航菜单</h3>
+            <p>
+                导航菜单使用的是 <a href="https://layui.dev/" target="_blank">Layui</a> 的 <a href="https://layui.dev/docs/2.8/nav/" target="_blank">导航菜单 Nav</a> 组件，通过 <code>layui-nav layui-nav-tree layuinull-layui-nav</code> 类实现。通过在 <code>a</code> 标签里加入  <code>&lt;a  lay-on="openTab"&gt;&lt;/a&gt;</code> 可使此超链接在本页面的 tab 中打开新页面。
+            </p>
+            <p>
+                默认导航菜单点击菜单项不会出现选中效果，这是由于在此项目中选中效果不会跟随 tab 的切换而切换。若想启用此效果可在 <code>index.js</code> 中删去以下内容
+                <pre class="layui-code layuinull-code-ln" lay-options="{}">
+// 移除点击菜单项出现的选中效果
+this.parentElement.classList.remove("layui-this");
+                </pre>
+            </p>
+            <h2>头部 header</h2>
+            <p>头部 header 由 <strong>侧栏控制按钮</strong> 和 <strong>标题</strong>构成。您也可以在 <code>&lt;!-- 头部 header --&gt;&lt;header class=&quot;layuinull-header layui-bg-gray&quot;&gt;&lt;/header&gt;</code> 里放置其他元素， header 可自适应调节高度。</p>
+            <h3>侧栏控制按钮</h3>
+            <p>侧栏控制按钮放在 <code>&lt;div id=&quot;layuinull-open-close-nav&quot;&gt;&lt;/div&gt;</code> 中。</p>
+            <h3>标题</h3>
+            <p>标题放在 <code>&lt;h1 class=&quot;layuinull-header-h1 layui-font-32&quot;&gt;&lt;/h1&gt;</code> 中。</p>
+            <h2>选项卡</h2>
+            <p>选项卡 tab 放在 <code>main</code> 标签中，使用的是 <a href="https://layui.dev/" target="_blank">Layui</a> 的 <a href="https://layui.dev/docs/2.8/tab/" target="_blank">选项卡 Tab</a> 组件</p>
+            <h2>底部 footer</h2>
+            <p>底部 footer 放在 <code>&lt;footer class=&quot;layuinull-footer&quot;&gt;&lt;/footer&gt;</code> 中。footer 是可选的，可以删除。</p>
+        </div>
+    </div>
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use(function () {
+            // code 不显示行号
+            layui.code({
+                elem: '.layuinull-code',
+                ln: false
+            });
+            // code 显示行号
+            layui.code({
+                elem: '.layuinull-code-ln',
+                ln: true
+            });
+        })
+    </script>
+</body>
+</html>

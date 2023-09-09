@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layui Null 主页</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        .margin-10px {
+            margin: 10px;
+        }
+
+        .padding-16px {
+            padding: 16px;
+        }
+
+        .text-align-center {
+            text-align: center;
+        }
+
+        .layui-icon {
+            font-size: inherit;
+        }
+
+        .text-indent-2em {
+            text-indent: 2em;
+        }
+
+        @media screen and (max-width: 1080px) {
+            .layuinull-mobile-preview {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="layui-bg-gray">
+    <div class="layui-container">
+        <div class="layui-text padding-16px text-align-center">
+            <h1>Layui Null 后台框架</h1>
+            <p>基于 Layui 编写的一套轻量的后台框架模板，适配手机电脑，多 Tab 页面支持</p>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 layui-col-lg4">
+                <div class="layui-card margin-10px">
+                    <div class="layui-card-header text-align-center layui-font-24">简洁轻量</div>
+                    <div class="layui-card-body text-indent-2em">
+                        求在实现需求的同时，尽可能精简代码（仅300行），提供更高效，更快速的开发体验
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 layui-col-lg4">
+                <div class="layui-card margin-10px">
+                    <div class="layui-card-header text-align-center layui-font-24">多 Tab 页</div>
+                    <div class="layui-card-body text-indent-2em">
+                        提供在同一网页中多个 Tab 页面的支持，方便用户进行不同内容的管理和操作
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 layui-col-lg4">
+                <div class="layui-card margin-10px">
+                    <div class="layui-card-header text-align-center layui-font-24">多端支持</div>
+                    <div class="layui-card-body text-indent-2em">
+                        不仅适用于电脑，还适配移动设备，兼容主流浏览器，提供最优的用户体验
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 layui-col-lg4">
+                <div class="layui-card margin-10px">
+                    <div class="layui-card-header text-align-center layui-font-24">完全开源</div>
+                    <div class="layui-card-body text-indent-2em">
+                        在 <a href="https://github.com/xkk1/layuinull" target="_blank"><i
+                                class="layui-icon layui-icon-github"></i>GitHub</a> 完全开源，使用 MIT 开源协议，任何人都可以使用、修改和分享
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 layui-col-lg4">
+                <div class="layui-card margin-10px">
+                    <div class="layui-card-header text-align-center layui-font-24">高度可定制</div>
+                    <div class="layui-card-body text-indent-2em">
+                        代码的简洁和清晰，使得可以根据自身的需求进行高度的定制，满足各种后台管理的需求
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 layui-col-lg4">
+                <div class="layui-card margin-10px">
+                    <div class="layui-card-header text-align-center layui-font-24">高效开发</div>
+                    <div class="layui-card-body text-indent-2em">
+                        仅使用 <a href="https://layui.dev/" target="_blank">Layui</a> 前端框架，无其他依赖，降低学习成本，大大提升开发效率
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-text padding-16px layui-font-18">
+            支持的浏览器：
+            <a href="https://www.microsoft.com/zh-cn/edge" target="_blank"><i
+                    class="layui-icon layui-icon-edge"></i>Edge</a>、
+            <a href="http://www.google.cn/chrome/index.html" target="_blank"><i
+                    class="layui-icon layui-icon-chrome"></i>Chrome</a>、
+            <a href="https://www.mozilla.org/zh-CN/firefox/browsers/" target="_blank"><i
+                    class="layui-icon layui-icon-firefox"></i>Firefox</a>、
+            <i class="layui-icon layui-icon-ie"></i>IE……
+        </div>
+        <div class="layui-row layuinull-mobile-preview">
+            <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 layui-col-lg12 text-align-center">
+                <button type="button" class="layui-btn" lay-on="layuinull-mobile-preview">移动设备显示预览</button>
+            </div>
+        </div>
+    </div>
+    <script src="../layui/layui.js"></script>
+    <script>
+    layui.use(function() {
+        let layer = layui.layer;
+        let util = layui.util;
+        // 事件
+        util.on('lay-on', {
+            'layuinull-mobile-preview'(el) {
+                layer.open({
+                    type: 2,
+                    title: '移动设备显示预览',
+                    shadeClose: true,
+                    area: ['500px', '750px'],
+                    shadeClose: true,
+                    content: '../index.html'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

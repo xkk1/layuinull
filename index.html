@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- Layui Null v1.0.0 —— 轻量的 Layui 后台框架 https://xkk1.github.io/layuinull/ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layui Null</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="layuinull-left-nav-wrap" id="layuinull-left-nav-wrap">
+        <!-- 左侧导航栏 -->
+        <nav class="layuinull-left-nav">
+            <!-- logo -->
+            <div class="layuinull-logo layui-bg-black layui-font-32" id="layuinull-logo">
+                Layui Null
+            </div>
+            <!-- 导航菜单 -->
+            <ul class="layui-nav layui-nav-tree layuinull-layui-nav">
+                <!-- 在这里增加左侧导航菜单 -->
+                <li class="layui-nav-item"><a href="page/home.html" lay-on="openTab"><i class="layui-icon layui-icon-home"></i> 主页</a></li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">默认展开</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="page/quickstart.html" lay-on="openTab">快速上手</a></dd>
+                        <dd><a href="page/document.html" lay-on="openTab">使用文档</a></dd>
+                        <dd><a href="https://github.com/xkk1/layuinull" target="_blank"><i class="layui-icon layui-icon-github"></i> GitHub</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">默认收缩</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="https://xkk1.github.io/" lay-on="openTab">小喾苦的个人网站</a></dd>
+                        <dd><a href="https://github.com/xkk1" target="_blank"><i
+                            class="layui-icon layui-icon-github"></i> 小喾苦(xkk1)</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+        <!-- 手机端关闭侧边栏 -->
+        <div id="layuinull-mobile-close-nav"></div>
+    </div>
+    <!-- 右侧主内容容器 -->
+    <div class="layuinull-right-container">
+        <!-- 头部 header -->
+        <header class="layuinull-header layui-bg-gray">
+            <!-- 侧栏控制按钮以及标题 -->
+            <div id="layuinull-open-close-nav">
+                <div id="layuinull-pc-open-close-nav">
+                    <!-- 电脑端打开侧边栏按钮 -->
+                    <i class="layui-icon layui-icon-spread-left layuinull-open-close-nav-i" id="layuinull-pc-open-nav"></i>
+                    <!-- 电脑端关闭侧边栏按钮 -->
+                    <i class="layui-icon layui-icon-shrink-right layuinull-open-close-nav-i" id="layuinull-pc-close-nav"></i>
+                </div>
+                <div id="layuinull-mobile-open-nav">
+                    <!-- 手机端打开侧边栏按钮 -->
+                    <i class="layui-icon layui-icon-more layuinull-open-close-nav-i" id="layuinull-mobile-open-nav"></i>
+                </div>
+                <!-- 标题 -->
+                <h1 class="layuinull-header-h1 layui-font-32">Layui Null —— 轻量的 Layui 后台框架</h1>
+            </div>
+        </header>
+        <!-- 选项卡 tab -->
+        <main class="layuinull-main layui-tab" lay-filter="layuinull-tab" lay-allowclose="true">
+            <ul class="layui-tab-title" id="layuinull-tab"></ul>
+            <div class="layui-tab-content"></div>
+        </main>
+        <!-- 底部 footer 可删除 -->
+        <footer class="layuinull-footer layui-bg-gray layui-font-gray">
+            <a href="https://github.com/xkk1/layuinull" target="_blank" class="layui-font-gray">Layui Null v1.0.0 —— 轻量的 Layui 后台框架模板</a>
+            <a href="https://xkk1.github.io/" target="_blank" class="layui-font-gray">by 小喾苦</a>
+        </footer>
+    </div>
+    <script src="layui/layui.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
